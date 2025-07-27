@@ -25,7 +25,6 @@ EcoNova is a tech-driven platform revolutionizing how India handles electronic w
 - **Backend**: [Coming Soon]
 - **Chatbot**: React + Custom AI Assistant (HelpNova)
 - **Deployment**: Vercel + GitHub + Netlify
-- **Design Tool**: V0.dev by Vercel (AI-Generated UI)
 
 ---
 
