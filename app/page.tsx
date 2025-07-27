@@ -506,9 +506,7 @@ export default function HomePage() {
                   alt="E-Waste Crisis Image 2"
                   className="w-full h-64 object-cover rounded-3xl shadow-2xl border-4 border-orange-200"
                   />
-                  <source src="/videos/ewaste3.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                  
                 <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-orange-500 rounded-full flex items-center justify-center animate-pulse">
                   <span className="text-white font-bold text-xs text-center">
                     Impact
