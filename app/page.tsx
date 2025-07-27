@@ -499,7 +499,7 @@ export default function HomePage() {
                   playsInline
                   poster="/placeholder.svg?height=256&width=400&text=E-Waste+Crisis+Video+1"
                 >
-                  <source src="/videos/ewaste2.mp4" type="video/mp4" />
+                  <source src="/videos/ewaste4.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
                 <div className="absolute -top-4 -right-4 w-16 h-16 bg-red-500 rounded-full flex items-center justify-center animate-bounce">
