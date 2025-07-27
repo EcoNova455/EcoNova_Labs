@@ -490,33 +490,22 @@ export default function HomePage() {
             {/* Videos Section */}
             <div className="space-y-8">
               <div className="relative">
-                <video
-                  ref={video1Ref}
+                <img
+                  src="/images/E-waste1_pic1.jpeg" 
+                  alt="E-Waste Crisis Image 1"
                   className="w-full h-64 object-cover rounded-3xl shadow-2xl border-4 border-red-200"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  poster="/placeholder.svg?height=256&width=400&text=E-Waste+Crisis+Video+1"
-                >
-                  <source src="/videos/ewaste4.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                />
                 <div className="absolute -top-4 -right-4 w-16 h-16 bg-red-500 rounded-full flex items-center justify-center animate-bounce">
                   <span className="text-white font-bold text-sm">Crisis</span>
                 </div>
               </div>
 
               <div className="relative">
-                <video
-                  ref={video2Ref}
+                 <img
+                  src="/images/E-waste_pic2.jpeg" 
+                  alt="E-Waste Crisis Image 2"
                   className="w-full h-64 object-cover rounded-3xl shadow-2xl border-4 border-orange-200"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  poster="/placeholder.svg?height=256&width=400&text=E-Waste+Crisis+Video+2"
-                >
+                  />
                   <source src="/videos/ewaste3.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
