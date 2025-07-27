@@ -491,7 +491,7 @@ export default function HomePage() {
             <div className="space-y-8">
               <div className="relative">
                 <img
-                  src="/images/E-waste1_pic1.jpeg" 
+                  src="/images/E-waste_pic1.jpeg" 
                   alt="E-Waste Crisis Image 1"
                   className="w-full h-64 object-cover rounded-3xl shadow-2xl border-4 border-red-200"
                 />
