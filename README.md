@@ -1,30 +1,38 @@
-# EcoNova Website Model
+# ♻️ EcoNova – Smart E-Waste Management Platform
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+EcoNova is a tech-driven platform revolutionizing how India handles electronic waste. We empower individuals, businesses, and communities to responsibly recycle e-waste — with doorstep pickups, AI-powered valuation, and certified eco-disposal.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/econova455-6781s-projects/v0-eco-nova-website-model)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/AjYJSKczN81)
+🌱 **Turning Trash into Impact – Responsibly, Conveniently, Transparently**
 
-## Overview
+---
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+## 🚀 Features
 
-## Deployment
+- ✅ **Doorstep Pickup**: Schedule pickups directly through our app or website
+- 🤖 **AI-Powered Pricing**: Get instant quotes for your old/broken devices
+- 💸 **Instant Payment or Donation**: Choose to earn or donate to green causes
+- 🔧 **Refurbished Component Store**: Buy quality-tested parts at lower prices
+- 🧾 **Disposal Certificates**: Get verified eco-disposal certificates (CSR/EPR ready)
+- 🏢 **Corporate Solutions**: Bulk pickups, compliance support, CSR impact reporting
+- 🎮 **Gamified User Rewards**: Earn points, track your green impact, and get rewarded
+- 🎨 **E-Waste for Artists**: Donate parts for creative reuse and upcycling projects
 
-Your project is live at:
+---
 
-**[https://vercel.com/econova455-6781s-projects/v0-eco-nova-website-model](https://vercel.com/econova455-6781s-projects/v0-eco-nova-website-model)**
+## 🛠 Tech Stack
 
-## Build your app
+- **Frontend**: Next.js (React), Tailwind CSS, ShadCN UI
+- **Backend**: [Coming Soon]
+- **Chatbot**: React + Custom AI Assistant (HelpNova)
+- **Deployment**: Vercel + GitHub + Netlify
+- **Design Tool**: V0.dev by Vercel (AI-Generated UI)
 
-Continue building your app on:
+---
 
-**[https://v0.dev/chat/projects/AjYJSKczN81](https://v0.dev/chat/projects/AjYJSKczN81)**
+## 📦 Installation (Dev Setup)
 
-## How It Works
+1. **Clone the Repo**
 
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+```bash
+git clone https://github.com/your-username/econova.git
+cd econova
