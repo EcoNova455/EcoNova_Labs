@@ -46,7 +46,7 @@ export default function CertificationPage() {
             For businesses seeking official certification, impact reporting, and bulk processing.
           </p>
           <Button
-            className="bg-econova-primary hover:bg-econova-primary-light text-white px-6 py-3"
+            className="bg-econova-accent hover:bg-econova-accent/90 text-white px-6 py-3"
             onClick={() => router.push("/business")}
           >
             View Corporate Plans
