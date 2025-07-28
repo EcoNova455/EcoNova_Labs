@@ -404,7 +404,7 @@ export default function HomePage() {
                   "🏢 Quarterly/annual bulk certification reports for corporates",
                   "🟢 Custom branding and team-level reports available",
                 ],
-                link: "/business",
+                link: "/certification",
                 buttonText: "Get Certified",
               },
               {
