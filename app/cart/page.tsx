@@ -22,38 +22,8 @@ interface CartItem {
 }
 
 export default function CartPage() {
-  const [cartItems, setCartItems] = useState<CartItem[]>([
-    {
-      id: 1,
-      name: "iPhone 12 Pro - Refurbished",
-      price: 45000,
-      originalPrice: 65000,
-      quantity: 1,
-      image: "/placeholder.svg?height=100&width=100&text=iPhone+12+Pro",
-      condition: "Excellent",
-      warranty: "6 months",
-    },
-    {
-      id: 2,
-      name: "MacBook Air M1 - Refurbished",
-      price: 75000,
-      originalPrice: 99900,
-      quantity: 1,
-      image: "/placeholder.svg?height=100&width=100&text=MacBook+Air",
-      condition: "Very Good",
-      warranty: "12 months",
-    },
-    {
-      id: 3,
-      name: "Samsung Galaxy S21 - Refurbished",
-      price: 35000,
-      originalPrice: 55000,
-      quantity: 2,
-      image: "/placeholder.svg?height=100&width=100&text=Galaxy+S21",
-      condition: "Good",
-      warranty: "6 months",
-    },
-  ])
+  const [cartItems, setCartItems] = useState<CartItem[]>([])
+
 
   const updateQuantity = (id: number, newQuantity: number) => {
     if (newQuantity === 0) {
