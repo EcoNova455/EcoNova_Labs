@@ -490,22 +490,34 @@ export default function HomePage() {
             {/* Videos Section */}
             <div className="space-y-8">
               <div className="relative">
-                <img
-                  src="/images/E-waste_pic1.jpeg" 
-                  alt="E-Waste Crisis Image 1"
-                  className="w-full h-64 object-cover rounded-3xl shadow-2xl border-4 border-red-200"
-                />
+                <video
+                 className="w-full h-64 object-cover rounded-3xl shadow-2xl border-4 border-red-200"
+                  autoPlay
+                  loop
+                 muted
+                 playsInline
+                 poster="/placeholder.svg?height=256&width=400&text=E-Waste+Video+1"
+                  >
+                 <source src="/videos/ewaste2.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                 </video>
                 <div className="absolute -top-4 -right-4 w-16 h-16 bg-red-500 rounded-full flex items-center justify-center animate-bounce">
                   <span className="text-white font-bold text-sm">Crisis</span>
                 </div>
               </div>
 
               <div className="relative">
-                 <img
-                  src="/images/E-waste_pic2.jpeg" 
-                  alt="E-Waste Crisis Image 2"
-                  className="w-full h-64 object-cover rounded-3xl shadow-2xl border-4 border-orange-200"
-                  />
+                <video
+                className="w-full h-64 object-cover rounded-3xl shadow-2xl border-4 border-orange-200"
+                autoPlay
+                loop
+                muted
+                playsInline
+                poster="/placeholder.svg?height=256&width=400&text=E-Waste+Video+2"
+               >
+              <source src="/videos/ewaste3.mp4" type="video/mp4" />
+               Your browser does not support the video tag.
+              </video>
                   
                 <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-orange-500 rounded-full flex items-center justify-center animate-pulse">
                   <span className="text-white font-bold text-xs text-center">
