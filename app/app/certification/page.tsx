@@ -34,6 +34,13 @@ export default function CertificationPage() {
 
         {/* Corporate Path */}
         <div className="p-6 rounded-2xl shadow-lg border border-gray-200">
+          <Image
+            src="/images/sample-certificate.png"
+            alt="Sample Certificate"
+            width={500}
+            height={350}
+            className="rounded-xl mb-6"
+          />
           <h2 className="text-2xl font-semibold mb-4 text-econova-primary">Corporate Certification</h2>
           <p className="text-econova-text-light mb-6">
             For businesses seeking official certification, impact reporting, and bulk processing.
