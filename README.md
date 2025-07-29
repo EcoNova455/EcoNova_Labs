@@ -1,11 +1,12 @@
-# ♻️ EcoNova – Smart E-Waste Management Platform
+# ♻️ EcoNova Labs – Smart E-Waste Management Platform
 
 EcoNova is a tech-driven platform revolutionizing how India handles electronic waste. We empower individuals, businesses, and communities to responsibly recycle e-waste — with doorstep pickups, AI-powered valuation, and certified eco-disposal.
 
 🌱 **Turning Trash into Impact – Responsibly, Conveniently, Transparently**
 
 
- [Visit Econova](https://econovalabs.netlify.app/)
+ <a href="https://www.econova.com" target="_blank">Visit EcoNova Labs</a>
+
 
 ---
 
