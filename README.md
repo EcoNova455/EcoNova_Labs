@@ -5,7 +5,7 @@ EcoNova is a tech-driven platform revolutionizing how India handles electronic w
 🌱 **Turning Trash into Impact – Responsibly, Conveniently, Transparently**
 
 
- <a href="https://www.econova.com" target="_blank">Visit EcoNova Labs</a>
+ <a href="https://econovalabs.netlify.app/" target="_blank">Visit EcoNova Labs</a>
 
 
 ---
