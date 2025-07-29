@@ -622,7 +622,7 @@ export default function HomePage() {
       </h2>
       <div className="w-20 h-1 bg-gradient-to-r from-econova-accent to-econova-secondary mx-auto mb-6 animate-scale-x" />
       <p className="text-xl text-econova-text-light animate-slide-up" style={{ animationDelay: "0.1s" }}>
-        The visionaries behind EcoNova
+        The visionaries behind this Smart Startup
       </p>
     </div>
 
