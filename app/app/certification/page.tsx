@@ -14,7 +14,7 @@ export default function CertificationPage() {
         {/* Individual Path */}
         <div className="p-6 rounded-2xl shadow-lg border border-gray-200">
           <Image
-            src="/images/sample-certificate.png"
+            src="/images/Certificate_for_individuals.png"
             alt="Sample Certificate"
             width={500}
             height={350}
@@ -35,7 +35,7 @@ export default function CertificationPage() {
         {/* Corporate Path */}
         <div className="p-6 rounded-2xl shadow-lg border border-gray-200">
           <Image
-            src="/images/sample-certificate.png"
+            src="/images/Certificate_for_corporate.png"
             alt="Sample Certificate"
             width={500}
             height={350}
