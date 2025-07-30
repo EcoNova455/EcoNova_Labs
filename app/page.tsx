@@ -346,17 +346,17 @@ export default function HomePage() {
           ].map((item, index) => (
             <div 
               key={index} 
-              className="p-6 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all hover:-translate-y-1 animate-slide-up"
+              className="p-6 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all hover:-translate-y-1 animate-slide-up group"
               style={{ animationDelay: `${index * 0.15}s` }}
             >
               <div className="flex items-start gap-4">
-                <div className={`p-3 rounded-lg ${item.icon.props.className.includes('green') ? 'bg-green-50' : item.icon.props.className.includes('blue') ? 'bg-blue-50' : 'bg-purple-50'}`}>
+                <div className={`p-3 rounded-lg group-hover:scale-110 transition-transform ${item.icon.props.className.includes('green') ? 'bg-green-50' : item.icon.props.className.includes('blue') ? 'bg-blue-50' : 'bg-purple-50'}`}>
                   {item.icon}
                 </div>
                 <div>
-                  <h4 className="font-bold text-econova-primary">{item.title}</h4>
+                  <h4 className="font-bold text-econova-primary group-hover:text-econova-secondary transition-colors">{item.title}</h4>
                   <p className="text-econova-text mb-2">{item.desc}</p>
-                  <p className="text-sm font-medium text-econova-accent">{item.stats}</p>
+                  <p className="text-sm font-medium text-econova-accent group-hover:underline transition-all">{item.stats}</p>
                 </div>
               </div>
             </div>
@@ -364,59 +364,65 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Animated ESG Donut Chart */}
+      {/* Interactive ESG Donut Chart */}
       <div className="animate-slide-right">
-        <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full">
-          <div className="relative h-96 w-full">
-            {/* Donut Chart Container */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="relative w-64 h-64">
-                {/* Animated Donut Segments */}
-                {[
-                  { color: "text-green-500", percentage: 40, category: "Environmental", items: ["Carbon Footprint", "Sustainability", "Gas Emission"] },
-                  { color: "text-blue-500", percentage: 35, category: "Social", items: ["Human Rights", "Diversity & Inclusion", "Community Impact"] },
-                  { color: "text-purple-500", percentage: 25, category: "Governance", items: ["Financial Transparency", "Reporting & KPIs", "Data Privacy"] }
-                ].map((segment, i) => (
-                  <div 
-                    key={i}
-                    className={`absolute inset-0 rounded-full border-8 ${segment.color}/30 animate-donut-grow`}
-                    style={{
-                      clipPath: `polygon(0 0, 0 50%, 50% 50%, 50% 0)`,
-                      transform: `rotate(${i === 0 ? 0 : i === 1 ? 144 : 252}deg)`, // 40%, 35%, 25% of 360deg
-                      animationDelay: `${i * 0.3}s`,
-                      transformOrigin: 'center'
-                    }}
-                  />
-                ))}
-                
-                {/* Center Text */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <div className="text-4xl font-bold text-econova-primary">ESG</div>
-                  <div className="text-sm text-econova-text-light">Impact Model</div>
+        <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full group relative">
+          {/* Your ESG Donut Chart Image */}
+          <img 
+            src="/images/ESG-Donut-Chart-01-1024x1024.png" 
+            alt="ESG Framework" 
+            className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
+          />
+          
+          {/* Hover Overlays */}
+          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="absolute inset-0 bg-gradient-to-br from-econova-primary/5 to-econova-secondary/5 rounded-xl" />
+            
+            {/* Environmental Highlight */}
+            <div 
+              className="absolute top-1/4 left-1/4 w-24 h-24 rounded-full border-4 border-green-500/50 pointer-events-none transition-all duration-700"
+              style={{
+                transform: 'translate(-50%, -50%) scale(0)',
+                opacity: 0
+              }}
+            />
+            
+            {/* Social Highlight */}
+            <div 
+              className="absolute top-1/3 right-1/4 w-24 h-24 rounded-full border-4 border-blue-500/50 pointer-events-none transition-all duration-700 delay-100"
+              style={{
+                transform: 'translate(50%, -50%) scale(0)',
+                opacity: 0
+              }}
+            />
+            
+            {/* Governance Highlight */}
+            <div 
+              className="absolute bottom-1/4 left-1/2 w-24 h-24 rounded-full border-4 border-purple-500/50 pointer-events-none transition-all duration-700 delay-200"
+              style={{
+                transform: 'translate(-50%, 50%) scale(0)',
+                opacity: 0
+              }}
+            />
+          </div>
+          
+          {/* Legend */}
+          <div className="mt-6 grid grid-cols-3 gap-4 text-center">
+            {[
+              { color: "bg-green-500", label: "Environmental" },
+              { color: "bg-blue-500", label: "Social" },
+              { color: "bg-purple-500", label: "Governance" }
+            ].map((item, i) => (
+              <div 
+                key={i} 
+                className="flex flex-col items-center gap-1 transition-transform hover:scale-105"
+              >
+                <div className="flex items-center gap-2">
+                  <div className={`w-3 h-3 rounded-full ${item.color}`}></div>
+                  <span className="text-xs font-medium">{item.label}</span>
                 </div>
               </div>
-            </div>
-            
-            {/* Legend */}
-            <div className="absolute bottom-0 left-0 right-0">
-              <div className="grid grid-cols-3 gap-4 text-center">
-                {[
-                  { color: "bg-green-500", label: "Environmental" },
-                  { color: "bg-blue-500", label: "Social" },
-                  { color: "bg-purple-500", label: "Governance" }
-                ].map((item, i) => (
-                  <div key={i} className="flex flex-col items-center gap-1">
-                    <div className="flex items-center gap-2">
-                      <div className={`w-3 h-3 rounded-full ${item.color}`}></div>
-                      <span className="text-xs font-medium">{item.label}</span>
-                    </div>
-                    <div className="text-xs text-econova-text-light">
-                      {i === 0 ? "40%" : i === 1 ? "35%" : "25%"}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
