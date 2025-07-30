@@ -328,7 +328,7 @@ export default function HomePage() {
             {
               icon: <TreePine className="text-green-500 w-5 h-5" />,
               title: "Environmental",
-              desc: "How we reduce e-waste pollution and carbon footprint",
+              desc: "Reducing e-waste pollution and carbon footprint",
               stats: "3.2M kg e-waste diverted annually"
             },
             {
@@ -344,7 +344,11 @@ export default function HomePage() {
               stats: "100% certified recycling partners"
             }
           ].map((item, index) => (
-            <div key={index} className="p-6 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+            <div 
+              key={index} 
+              className="p-6 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all hover:-translate-y-1 animate-slide-up"
+              style={{ animationDelay: `${index * 0.15}s` }}
+            >
               <div className="flex items-start gap-4">
                 <div className={`p-3 rounded-lg ${item.icon.props.className.includes('green') ? 'bg-green-50' : item.icon.props.className.includes('blue') ? 'bg-blue-50' : 'bg-purple-50'}`}>
                   {item.icon}
@@ -360,52 +364,83 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* ESG Visual */}
+      {/* Animated ESG Donut Chart */}
       <div className="animate-slide-right">
-        <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-          <div className="h-64 w-full relative">
-            {/* Replace with your actual ESG visualization */}
+        <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full">
+          <div className="relative h-96 w-full">
+            {/* Donut Chart Container */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="relative">
-                <div className="w-48 h-48 rounded-full bg-green-500/10 border-8 border-green-500/30 animate-pulse"></div>
-                <div className="w-40 h-40 rounded-full bg-blue-500/10 border-8 border-blue-500/30 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-pulse delay-100"></div>
-                <div className="w-32 h-32 rounded-full bg-purple-500/10 border-8 border-purple-500/30 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-pulse delay-200"></div>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-                  <span className="text-lg font-bold text-econova-primary">Our ESG</span>
-                  <span className="block text-sm text-econova-text-light">Impact Model</span>
+              <div className="relative w-64 h-64">
+                {/* Animated Donut Segments */}
+                {[
+                  { color: "text-green-500", percentage: 40, category: "Environmental", items: ["Carbon Footprint", "Sustainability", "Gas Emission"] },
+                  { color: "text-blue-500", percentage: 35, category: "Social", items: ["Human Rights", "Diversity & Inclusion", "Community Impact"] },
+                  { color: "text-purple-500", percentage: 25, category: "Governance", items: ["Financial Transparency", "Reporting & KPIs", "Data Privacy"] }
+                ].map((segment, i) => (
+                  <div 
+                    key={i}
+                    className={`absolute inset-0 rounded-full border-8 ${segment.color}/30 animate-donut-grow`}
+                    style={{
+                      clipPath: `polygon(0 0, 0 50%, 50% 50%, 50% 0)`,
+                      transform: `rotate(${i === 0 ? 0 : i === 1 ? 144 : 252}deg)`, // 40%, 35%, 25% of 360deg
+                      animationDelay: `${i * 0.3}s`,
+                      transformOrigin: 'center'
+                    }}
+                  />
+                ))}
+                
+                {/* Center Text */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center">
+                  <div className="text-4xl font-bold text-econova-primary">ESG</div>
+                  <div className="text-sm text-econova-text-light">Impact Model</div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="grid grid-cols-3 gap-4 mt-6 text-center">
-            {[
-              { color: "bg-green-500", label: "Environmental" },
-              { color: "bg-blue-500", label: "Social" },
-              { color: "bg-purple-500", label: "Governance" }
-            ].map((item, i) => (
-              <div key={i} className="flex items-center justify-center gap-2">
-                <div className={`w-3 h-3 rounded-full ${item.color}`}></div>
-                <span className="text-xs font-medium">{item.label}</span>
+            
+            {/* Legend */}
+            <div className="absolute bottom-0 left-0 right-0">
+              <div className="grid grid-cols-3 gap-4 text-center">
+                {[
+                  { color: "bg-green-500", label: "Environmental" },
+                  { color: "bg-blue-500", label: "Social" },
+                  { color: "bg-purple-500", label: "Governance" }
+                ].map((item, i) => (
+                  <div key={i} className="flex flex-col items-center gap-1">
+                    <div className="flex items-center gap-2">
+                      <div className={`w-3 h-3 rounded-full ${item.color}`}></div>
+                      <span className="text-xs font-medium">{item.label}</span>
+                    </div>
+                    <div className="text-xs text-econova-text-light">
+                      {i === 0 ? "40%" : i === 1 ? "35%" : "25%"}
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    {/* PRO Explained */}
+    {/* PRO Section */}
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-24">
-      <div className="animate-slide-left order-last lg:order-first">
-        <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-          {/* Replace with your actual PRO visualization */}
-          <div className="h-64 w-full relative">
+      {/* PRO Visual */}
+      <div className="animate-slide-left">
+        <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full">
+          <div className="relative h-96 w-full">
+            {/* PRO Visualization */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-32 h-32 rounded-full bg-gradient-to-br from-econova-accent to-econova-secondary mb-6">
-                  <BarChart3 className="w-12 h-12 text-white" />
+                <div className="relative inline-block mb-8">
+                  <div className="w-48 h-48 rounded-full bg-gradient-to-br from-econova-accent/10 to-econova-secondary/10 border-8 border-econova-accent/20 animate-pulse"></div>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+                    <div className="w-32 h-32 rounded-full bg-gradient-to-br from-econova-accent to-econova-secondary flex items-center justify-center text-white text-4xl font-bold shadow-lg">
+                      PRO
+                    </div>
+                  </div>
                 </div>
-                <h4 className="text-xl font-bold text-econova-primary">PRO Metrics</h4>
-                <p className="text-econova-text">Performance • Responsibility • Opportunity</p>
+                <h4 className="text-xl font-bold text-econova-primary">Producer Responsibility Organization</h4>
+                <p className="text-econova-text">Compliant with E-Waste Management Rules</p>
               </div>
             </div>
           </div>
@@ -415,35 +450,44 @@ export default function HomePage() {
       <div className="animate-slide-right">
         <h3 className="text-3xl font-bold text-econova-primary mb-6 flex items-center">
           <div className="w-12 h-12 rounded-lg bg-econova-accent/10 flex items-center justify-center mr-4">
-            <BarChart3 className="text-econova-accent w-6 h-6" />
+            <Recycle className="text-econova-accent w-6 h-6" />
           </div>
-          What is PRO?
+          Our PRO Commitment
         </h3>
         <p className="text-lg text-econova-text mb-6 leading-relaxed">
-          PRO stands for <span className="font-semibold text-econova-primary">Performance, Responsibility, Opportunity</span> - 
-          our internal framework for measuring operational excellence.
+          As a <span className="font-semibold text-econova-primary">Producer Responsibility Organization (PRO)</span>, 
+          we ensure compliance with India's E-Waste Management Rules while creating value from waste.
         </p>
         
         <div className="space-y-4">
           {[
             {
-              icon: <CheckCircle className="text-econova-accent w-5 h-5" />,
-              title: "Performance",
-              desc: "Efficiency in recycling processes and technology"
+              icon: <Shield className="text-green-500 w-5 h-5" />,
+              title: "Compliance",
+              desc: "Meeting all regulatory requirements for e-waste handling"
             },
             {
-              icon: <Shield className="text-econova-secondary w-5 h-5" />,
-              title: "Responsibility",
-              desc: "Commitment to ethical e-waste handling"
+              icon: <Settings className="text-blue-500 w-5 h-5" />,
+              title: "Collection Network",
+              desc: "Pan-India infrastructure for e-waste collection"
+            },
+            {
+              icon: <BarChart3 className="text-purple-500 w-5 h-5" />,
+              title: "Reporting",
+              desc: "Transparent documentation for authorities and clients"
             },
             {
               icon: <Sparkles className="text-yellow-500 w-5 h-5" />,
-              title: "Opportunity",
-              desc: "Creating value from waste through innovation"
+              title: "Innovation",
+              desc: "Developing new recycling technologies and processes"
             }
           ].map((item, index) => (
-            <div key={index} className="flex items-start gap-4 p-4 hover:bg-econova-lighter/30 rounded-lg transition-colors">
-              <div className="p-2 bg-white rounded-lg shadow-sm border border-gray-100">
+            <div 
+              key={index} 
+              className="flex items-start gap-4 p-4 bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-all hover:-translate-y-1 animate-slide-up"
+              style={{ animationDelay: `${index * 0.15}s` }}
+            >
+              <div className="p-2 rounded-lg bg-econova-lighter/50">
                 {item.icon}
               </div>
               <div>
@@ -459,15 +503,34 @@ export default function HomePage() {
     {/* Impact Stats */}
     <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-6">
       {[
-        { value: "3.2M+", label: "Kg e-waste recycled", icon: <Recycle className="w-6 h-6 text-econova-accent" /> },
-        { value: "200+", label: "Green jobs created", icon: <Users className="w-6 h-6 text-blue-500" /> },
-        { value: "97%", label: "Recycling efficiency", icon: <CheckCircle className="w-6 h-6 text-green-500" /> },
-        { value: "50K+", label: "Households impacted", icon: <ShoppingBag className="w-6 h-6 text-purple-500" /> }
+        { 
+          value: "3.2M+", 
+          label: "Kg e-waste recycled", 
+          icon: <Recycle className="w-6 h-6 text-econova-accent" />,
+          animation: "animate-bounce-in"
+        },
+        { 
+          value: "200+", 
+          label: "Green jobs created", 
+          icon: <Users className="w-6 h-6 text-blue-500" />,
+          animation: "animate-bounce-in delay-100"
+        },
+        { 
+          value: "100%", 
+          label: "Compliance rate", 
+          icon: <CheckCircle className="w-6 h-6 text-green-500" />,
+          animation: "animate-bounce-in delay-200"
+        },
+        { 
+          value: "50+", 
+          label: "PRO partners", 
+          icon: <Truck className="w-6 h-6 text-purple-500" />,
+          animation: "animate-bounce-in delay-300"
+        }
       ].map((stat, index) => (
         <div 
           key={index} 
-          className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all animate-slide-up"
-          style={{ animationDelay: `${index * 0.1}s` }}
+          className={`bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg transition-all hover:-translate-y-1 ${stat.animation}`}
         >
           <div className="flex items-center gap-4">
             <div className="p-3 rounded-lg bg-econova-lighter/50">
