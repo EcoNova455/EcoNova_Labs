@@ -369,7 +369,7 @@ export default function HomePage() {
         <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full group relative">
           {/* Your ESG Donut Chart Image */}
           <img 
-            src="/images/ESG-Donut-Chart-01-1024x1024.png" 
+            src="/images/ESG-graph.png" 
             alt="ESG Framework" 
             className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
           />
