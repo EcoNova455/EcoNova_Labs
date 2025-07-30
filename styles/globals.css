@@ -100,3 +100,24 @@
 .animate-truck-move {
   animation: truck-move 10s linear infinite;
 }
+@keyframes donut-grow {
+  from { transform: scale(0) rotate(0deg); opacity: 0; }
+  to { transform: scale(1) rotate(360deg); opacity: 1; }
+}
+
+@keyframes bounce-in {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-donut-grow {
+  animation: donut-grow 1s ease-out forwards;
+}
+
+.animate-bounce-in {
+  animation: bounce-in 1s ease infinite;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
