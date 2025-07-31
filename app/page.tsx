@@ -321,44 +321,38 @@ export default function HomePage() {
         </p>
         
         <div className="space-y-6">
-          {[
-            {
-                icon: <TreePine className="w-5 h-5" />,
+        {[
+  {
+    icon: <TreePine className="w-5 h-5" />,
     title: "Environmental",
     desc: "Reducing e-waste pollution and carbon footprint",
     stats: "3.2M kg e-waste diverted annually",
-    color: "from-[#8BAA70] to-[#6BA55D]"
-            },
-            {
-              icon: <Users className="w-5 h-5" />,
+    gradient: "bg-gradient-to-r from-[#8BAA70] to-[#6BA55D]"
+  },
+  {
+    icon: <Users className="w-5 h-5" />,
     title: "Social",
     desc: "Creating jobs and safe working conditions",
     stats: "200+ green jobs created",
-    color: "from-[#6E2844] to-[#8A3451]"
-            },
-            {
-             icon: <Shield className="w-5 h-5" />,
+    gradient: "bg-gradient-to-r from-[#6E2844] to-[#8A3451]"
+  },
+  {
+    icon: <Shield className="w-5 h-5" />,
     title: "Governance",
     desc: "Ethical business practices and transparency",
     stats: "100% certified recycling partners",
-    color: "from-[#6E737D] to-[#8C92AC]"
-            }
-          ].map((item, index) => (
-            <div 
-    key={index} 
-    className="group animate-slide-up" 
-    style={{ animationDelay: `${index * 0.15}s` }}
-  >
+    gradient: "bg-gradient-to-r from-[#6E737D] to-[#8C92AC]"
+  }
+].map((item, index) => (
+  <div key={index} className="group animate-slide-up" style={{ animationDelay: `${index * 0.15}s` }}>
     <Card className="h-full hover:shadow-2xl transition-all duration-500 border-0 shadow-lg group-hover:scale-[1.02] relative overflow-hidden">
       {/* Gradient Background */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-10`}></div>
+      <div className={`absolute inset-0 ${item.gradient} opacity-10`}></div>
       
       <CardContent className="p-6 relative z-10">
         <div className="flex items-start gap-6">
           {/* Animated Icon */}
-          <div 
-            className={`w-16 h-16 bg-gradient-to-br ${item.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 group-hover:animate-pulse`}
-          >
+          <div className={`w-16 h-16 ${item.gradient} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 group-hover:animate-pulse`}>
             {React.cloneElement(item.icon, { 
               className: "w-8 h-8 text-white" 
             })}
@@ -372,7 +366,7 @@ export default function HomePage() {
               {item.desc}
             </CardDescription>
             <div className="text-sm font-medium bg-white/80 px-3 py-1 rounded-full inline-block border border-gray-200 group-hover:bg-white transition-colors">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r ${item.color}">
+              <span className={`bg-clip-text text-transparent ${item.gradient}`}>
                 {item.stats}
               </span>
             </div>
