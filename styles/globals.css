@@ -121,3 +121,12 @@
 .delay-100 { animation-delay: 0.1s; }
 .delay-200 { animation-delay: 0.2s; }
 .delay-300 { animation-delay: 0.3s; }
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.group-hover\:animate-pulse {
+  animation: pulse 1.5s ease-in-out infinite;
+}
