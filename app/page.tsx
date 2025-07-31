@@ -429,17 +429,24 @@ export default function HomePage() {
     {/* PRO Section */}
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-24">
       {/* PRO Visual */}
+         {/* PRO Visual */}
       <div className="animate-slide-left">
-        <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full group relative overflow-hidden">
-          <img 
-            src="/images/pro-visual.jpg" 
-            alt="PRO Compliance" 
-            className="w-full h-auto object-cover rounded-lg transition-transform duration-500 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-            <div className="text-white">
-              <h4 className="text-xl font-bold">PRO Compliance</h4>
-              <p className="text-sm">Meeting all regulatory requirements for e-waste management</p>
+        <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full">
+          <div className="relative h-96 w-full">
+            {/* PRO Visualization */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-center">
+                <div className="relative inline-block mb-8">
+                  <div className="w-48 h-48 rounded-full bg-gradient-to-br from-econova-accent/10 to-econova-secondary/10 border-8 border-econova-accent/20 animate-pulse"></div>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+                    <div className="w-32 h-32 rounded-full bg-gradient-to-br from-econova-accent to-econova-secondary flex items-center justify-center text-white text-4xl font-bold shadow-lg">
+                      PRO
+                    </div>
+                  </div>
+                </div>
+                <h4 className="text-xl font-bold text-econova-primary">Producer Responsibility Organization</h4>
+                <p className="text-econova-text">Compliant with E-Waste Management Rules</p>
+              </div>
             </div>
           </div>
         </div>
