@@ -437,7 +437,7 @@ export default function HomePage() {
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center">
                 <div className="relative inline-block mb-8">
-                  <div className="w-48 h-48 rounded-full bg-gradient-to-br from-econova-accent/10 to-econova-secondary/10 border-8 border-econova-accent/20 animate-pulse"></div>
+                  <div className="w-48 h-48 rounded-full bg-gradient-to-br from-econova-accent/30 to-econova-secondary/40 border-8 border-econova-accent/20 animate-pulse"></div>
                   <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
                     <div className="w-32 h-32 rounded-full bg-gradient-to-br from-econova-accent to-econova-secondary flex items-center justify-center text-white text-4xl font-bold shadow-lg">
                       PRO
