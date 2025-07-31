@@ -281,6 +281,7 @@ export default function HomePage() {
         </div>
       </section>
       {/* ESG & PRO Impact Section */}
+{/* ESG & PRO Impact Section */}
 <section
   id="esg-pro"
   data-animate
@@ -321,61 +322,45 @@ export default function HomePage() {
         </p>
         
         <div className="space-y-6">
-        {[
-  {
-    icon: <TreePine className="w-5 h-5" />,
-    title: "Environmental",
-    desc: "Reducing e-waste pollution and carbon footprint",
-    stats: "3.2M kg e-waste diverted annually",
-    gradient: "bg-gradient-to-r from-[#8BAA70] to-[#6BA55D]"
-  },
-  {
-    icon: <Users className="w-5 h-5" />,
-    title: "Social",
-    desc: "Creating jobs and safe working conditions",
-    stats: "200+ green jobs created",
-    gradient: "bg-gradient-to-r from-[#6E2844] to-[#8A3451]"
-  },
-  {
-    icon: <Shield className="w-5 h-5" />,
-    title: "Governance",
-    desc: "Ethical business practices and transparency",
-    stats: "100% certified recycling partners",
-    gradient: "bg-gradient-to-r from-[#6E737D] to-[#8C92AC]"
-  }
-].map((item, index) => (
-  <div key={index} className="group animate-slide-up" style={{ animationDelay: `${index * 0.15}s` }}>
-    <Card className="h-full hover:shadow-2xl transition-all duration-500 border-0 shadow-lg group-hover:scale-[1.02] relative overflow-hidden">
-      {/* Gradient Background */}
-      <div className={`absolute inset-0 ${item.gradient} opacity-10`}></div>
-      
-      <CardContent className="p-6 relative z-10">
-        <div className="flex items-start gap-6">
-          {/* Animated Icon */}
-          <div className={`w-16 h-16 ${item.gradient} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 group-hover:animate-pulse`}>
-            {React.cloneElement(item.icon, { 
-              className: "w-8 h-8 text-white" 
-            })}
-          </div>
-          
-          <div>
-            <CardTitle className="text-xl text-econova-primary group-hover:text-econova-secondary transition-colors duration-300">
-              {item.title}
-            </CardTitle>
-            <CardDescription className="text-econova-text mt-2 mb-3">
-              {item.desc}
-            </CardDescription>
-            <div className="text-sm font-medium bg-white/80 px-3 py-1 rounded-full inline-block border border-gray-200 group-hover:bg-white transition-colors">
-              <span className={`bg-clip-text text-transparent ${item.gradient}`}>
-                {item.stats}
-              </span>
+          {[
+            {
+              icon: <TreePine className="text-green-500 w-5 h-5" />,
+              title: "Environmental",
+              desc: "Reducing e-waste pollution and carbon footprint",
+              stats: "3.2M kg e-waste diverted annually"
+            },
+            {
+              icon: <Users className="text-blue-500 w-5 h-5" />,
+              title: "Social",
+              desc: "Creating jobs and safe working conditions",
+              stats: "200+ green jobs created"
+            },
+            {
+              icon: <Shield className="text-purple-500 w-5 h-5" />,
+              title: "Governance",
+              desc: "Ethical business practices and transparency",
+              stats: "100% certified recycling partners"
+            }
+          ].map((item, index) => (
+            <div 
+              key={index} 
+              className="p-6 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all hover:-translate-y-1 animate-slide-up group"
+              style={{ animationDelay: `${index * 0.15}s` }}
+            >
+              <div className="flex items-start gap-4">
+                <div className={`p-3 rounded-lg group-hover:scale-110 transition-transform ${item.icon.props.className.includes('green') ? 'bg-green-50' : item.icon.props.className.includes('blue') ? 'bg-blue-50' : 'bg-purple-50'}`}>
+                  {item.icon}
+                </div>
+                <div>
+                  <h4 className="font-bold text-econova-primary group-hover:text-econova-secondary transition-colors">{item.title}</h4>
+                  <p className="text-econova-text mb-2">{item.desc}</p>
+                  <p className="text-sm font-medium text-econova-accent group-hover:underline transition-all">{item.stats}</p>
+                </div>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
-      </CardContent>
-    </Card>
-  </div>
-))}
+      </div>
 
       {/* Interactive ESG Donut Chart */}
       <div className="animate-slide-right">
@@ -445,22 +430,16 @@ export default function HomePage() {
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-24">
       {/* PRO Visual */}
       <div className="animate-slide-left">
-        <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full">
-          <div className="relative h-96 w-full">
-            {/* PRO Visualization */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center">
-                <div className="relative inline-block mb-8">
-                  <div className="w-48 h-48 rounded-full bg-gradient-to-br from-econova-accent/10 to-econova-secondary/10 border-8 border-econova-accent/20 animate-pulse"></div>
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-                    <div className="w-32 h-32 rounded-full bg-gradient-to-br from-econova-accent to-econova-secondary flex items-center justify-center text-white text-4xl font-bold shadow-lg">
-                      PRO
-                    </div>
-                  </div>
-                </div>
-                <h4 className="text-xl font-bold text-econova-primary">Producer Responsibility Organization</h4>
-                <p className="text-econova-text">Compliant with E-Waste Management Rules</p>
-              </div>
+        <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full group relative overflow-hidden">
+          <img 
+            src="/images/pro-visual.jpg" 
+            alt="PRO Compliance" 
+            className="w-full h-auto object-cover rounded-lg transition-transform duration-500 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+            <div className="text-white">
+              <h4 className="text-xl font-bold">PRO Compliance</h4>
+              <p className="text-sm">Meeting all regulatory requirements for e-waste management</p>
             </div>
           </div>
         </div>
@@ -478,40 +457,42 @@ export default function HomePage() {
           we ensure compliance with India's E-Waste Management Rules while creating value from waste.
         </p>
         
-        <div className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {[
             {
               icon: <Shield className="text-green-500 w-5 h-5" />,
-              title: "Compliance",
-              desc: "Meeting all regulatory requirements for e-waste handling"
+              title: "Regulatory Compliance",
+              desc: "Full adherence to E-Waste Management Rules"
             },
             {
-              icon: <Settings className="text-blue-500 w-5 h-5" />,
+              icon: <Truck className="text-blue-500 w-5 h-5" />,
               title: "Collection Network",
-              desc: "Pan-India infrastructure for e-waste collection"
+              desc: "Nationwide e-waste collection infrastructure"
             },
             {
               icon: <BarChart3 className="text-purple-500 w-5 h-5" />,
-              title: "Reporting",
-              desc: "Transparent documentation for authorities and clients"
+              title: "Transparent Reporting",
+              desc: "Detailed documentation for authorities"
             },
             {
-              icon: <Sparkles className="text-yellow-500 w-5 h-5" />,
-              title: "Innovation",
-              desc: "Developing new recycling technologies and processes"
+              icon: <Settings className="text-yellow-500 w-5 h-5" />,
+              title: "Processing Facilities",
+              desc: "Certified recycling and refurbishment centers"
             }
           ].map((item, index) => (
             <div 
               key={index} 
-              className="flex items-start gap-4 p-4 bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-all hover:-translate-y-1 animate-slide-up"
+              className="p-4 bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-all hover:-translate-y-1 animate-slide-up group"
               style={{ animationDelay: `${index * 0.15}s` }}
             >
-              <div className="p-2 rounded-lg bg-econova-lighter/50">
-                {item.icon}
-              </div>
-              <div>
-                <h4 className="font-semibold text-econova-primary">{item.title}</h4>
-                <p className="text-econova-text">{item.desc}</p>
+              <div className="flex items-start gap-3">
+                <div className={`p-2 rounded-lg ${item.icon.props.className.includes('green') ? 'bg-green-50' : item.icon.props.className.includes('blue') ? 'bg-blue-50' : item.icon.props.className.includes('purple') ? 'bg-purple-50' : 'bg-yellow-50'} group-hover:scale-110 transition-transform`}>
+                  {item.icon}
+                </div>
+                <div>
+                  <h4 className="font-semibold text-econova-primary group-hover:text-econova-secondary transition-colors">{item.title}</h4>
+                  <p className="text-sm text-econova-text">{item.desc}</p>
+                </div>
               </div>
             </div>
           ))}
@@ -526,33 +507,34 @@ export default function HomePage() {
           value: "3.2M+", 
           label: "Kg e-waste recycled", 
           icon: <Recycle className="w-6 h-6 text-econova-accent" />,
-          animation: "animate-bounce-in"
+          color: "bg-green-100"
         },
         { 
           value: "200+", 
           label: "Green jobs created", 
           icon: <Users className="w-6 h-6 text-blue-500" />,
-          animation: "animate-bounce-in delay-100"
+          color: "bg-blue-100"
         },
         { 
           value: "100%", 
           label: "Compliance rate", 
           icon: <CheckCircle className="w-6 h-6 text-green-500" />,
-          animation: "animate-bounce-in delay-200"
+          color: "bg-purple-100"
         },
         { 
           value: "50+", 
           label: "PRO partners", 
           icon: <Truck className="w-6 h-6 text-purple-500" />,
-          animation: "animate-bounce-in delay-300"
+          color: "bg-yellow-100"
         }
       ].map((stat, index) => (
         <div 
           key={index} 
-          className={`bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg transition-all hover:-translate-y-1 ${stat.animation}`}
+          className={`p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg transition-all hover:-translate-y-1 animate-bounce-in ${stat.color}`}
+          style={{ animationDelay: `${index * 0.1}s` }}
         >
           <div className="flex items-center gap-4">
-            <div className="p-3 rounded-lg bg-econova-lighter/50">
+            <div className="p-3 rounded-lg bg-white/80">
               {stat.icon}
             </div>
             <div>
