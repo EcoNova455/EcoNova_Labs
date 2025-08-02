@@ -83,7 +83,7 @@ export default function HomePage() {
   }, [isLoading])
 
   if (isLoading) {
-    return <TruckLoader isLoading={isLoading} message="Welcome to EcoNova Labs" />
+    return <TruckLoader isLoading={isLoading} message="Welcome to EcoNova" />
   }
 
   return (
