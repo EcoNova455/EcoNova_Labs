@@ -7,7 +7,7 @@ import { HelpNovaChatbot } from "@/components/helpnova-chatbot"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "EcoNova Labs - AI-Powered E-Waste Management",
+  title: "EcoNova - AI-Powered E-Waste Management",
   description:
     "Transform e-waste into cash with India's leading AI-powered e-waste management platform. Doorstep pickup, instant payments, and certified disposal.",
     generator: 'v0.dev'
