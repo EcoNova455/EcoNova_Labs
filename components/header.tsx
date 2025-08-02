@@ -57,7 +57,7 @@ export function Header() {
                 scrolled ? "text-econova-primary" : "text-white"
               }`}
             >
-              EcoNova Labs
+              EcoNova
             </span>
           </Link>
 
